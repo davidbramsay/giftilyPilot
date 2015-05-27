@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="google-site-verification" content="xY5DUNVQ6_N4Dfnxo-SOxesvTaxtRhnybryFDl2Mb20" />
+  <meta charset="utf-8">
+  <title>Gifti.ly</title>
+  <meta name="description" content="Giftily (Gifti.ly) is a card and gift giving recommendation and tracking service">
+  <meta name="author" content="David Ramsay">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  
+
+
+  <!-- STYLESHEETS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../public/stylesheets/normalize.css">
+  <link rel="stylesheet" href="../public/stylesheets/skeleton.css">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <!-- Form manipulation
+   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.0.7/parsley.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="container" style="padding-top:50px">
+  
+<form id="register" class="form" action="/signup" method="post" data-parsley-validate data-parsley-ui-enabled>
+
+  <label for="firstName">First Name * :</label>
+  <input type="text" name="firstName" data-parsley-trigger="change" required />
+
+  <label for="lastName">Last Name * :</label>
+  <input type="text" name="lastName" data-parsley-trigger="change" required />
+
+  <label for="email">Email * :</label>
+  <input type="email" name="email" data-parsley-trigger="change" required />
+
+  <label for="phone">Phone # (optional) :</label>
+  <input type="text" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$" data-parsley-pattern-message="This value should be a phone number " name="phone" data-parsley-trigger="change"/>  
+
+  <label for="gender">Gender * :</label>
+  <p>
+    Male <input type="radio" name="gender" id="genderM" value="M" required /> &nbsp; &nbsp; &nbsp;
+    Female <input type="radio" name="gender" id="genderF" value="F" />
+  </p>
+
+
+
+<div class="addressForm">
+
+<label for="street">Your Address * :</label>
+  <input type="text" name="street" data-parsley-trigger="change" required />
+
+<label for="street2">Your Address 2 (optional) :</label>
+  <input type="text" name="street2" data-parsley-trigger="change" />
+
+<label for="city">City * :</label>
+  <input type="text" name="city" data-parsley-trigger="change" required />  
+
+<label for="state">State * :</label>
+  <input type="text" name="state" data-parsley-trigger="change" required />
+</div>
+<label for="zipcode">Zip * :</label>
+  <input style="margin-top:-10px" type="text" data-parsley-pattern="\d{5}(?:[-\s]\d{4})?" data-parsley-pattern-message="This value should be a 5 character number " name="zipcode" data-parsley-trigger="change" required />  
+
+
+<hr>
+<p>
+  <label for="cardPreference">Card Preference * :</label>
+    <input type="checkbox" name="cardPreference" value="funny" data-parsley-mincheck="1" data-parsley-trigger="change" required/> funny &nbsp; &nbsp; &nbsp;
+    <input type="checkbox" name="cardPreference" value="simple" /> simple and sweet &nbsp; &nbsp; &nbsp;
+    <input type="checkbox" name="cardPreference" value="poetic" />poetic
+  
+  </p>
+
+  <!-- regular select input. Nothing more to add. -->
+  <label for="whoFrom">Who do you send your card on behalf of? * </label>
+  <select name="whoFrom" id="whoFrom" required>
+    <option value="">select from below</option>
+    <option value="yourself">Yourself</option>
+    <option value="partner">Yourself + Partner</option>
+  </select>
+
+
+<div class="addressForm">
+
+If you want us to address and stamp the card for you, give us your father's address!
+<br><br>
+<label for="fstreet">Your Father's Address :</label>
+  <input type="text" name="fstreet" data-parsley-trigger="change"/>
+
+<label for="fstreet2">Your Father's Address 2 :</label>
+  <input type="text" name="fstreet2" data-parsley-trigger="change" />
+
+<label for="fcity">City :</label>
+  <input type="text" name="fcity" data-parsley-trigger="change"/>  
+
+<label for="fstate">State :</label>
+  <input type="text" name="fstate" data-parsley-trigger="change"/>
+</div>
+<label for="fzipcode">Zip :</label>
+  <input style="margin-top:-10px" type="text" data-parsley-pattern="\d{5}(?:[-\s]\d{4})?" data-parsley-pattern-message="This value should be a 5 character number " name="fzipcode" data-parsley-trigger="change"/>  
+
+
+<hr>
+
+  <input type="submit" style="width:100%"/>
+</form>
+</div> 
+  <div style="width:100%;min-height:50px"></div>   
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+
+</html>
+
